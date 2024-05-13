@@ -4,18 +4,19 @@ body {
   background-image: url('полка_книжек2.jpeg'); /* Путь к вашей картинке */
   background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
+  margin: 0;
 }
 
 li {
   list-style-type: none; /* Убираем стандартные маркеры */
   position: relative; /* Позиционируем относительно */
-  font-size: 20px; /* Размер шрифта */
+  font-size: 24px; /* Размер шрифта */
 }
 
 li.yes {
   list-style-type: disc;
   font-size: 32px;
-  color: lightgreen;
+  color: rgb(144, 238, 144);
 }
 
 li.no {
@@ -26,16 +27,16 @@ li.no {
 
 li.desc_yes::before {
   content: '•'; /* Устанавливаем контент точки */
-  color: lightgreen; /* Цвет точки */
+  color: lightgreen;
   font-size: inherit; /* Наследуем размер шрифта от родительского элемента */
-  margin-right: 5px; /* Отступ между точкой и текстом */
+  margin-right: 5px;
 }
 
 li.desc_no::before {
   content: '•'; /* Устанавливаем контент точки */
-  color: rgb(255, 76, 91); /* Цвет точки */
+  color: rgb(255, 76, 91);
   font-size: inherit; /* Наследуем размер шрифта от родительского элемента */
-  margin-right: 5px; /* Отступ между точкой и текстом */
+  margin-right: 5px;
 }
 
 h1 {
@@ -44,35 +45,38 @@ h1 {
   margin-bottom: 64px;
   margin-left: 32px;
   margin-right: 32px;
+  color: rgba(250, 250, 250, 0.4);
 }
 
-h1.SQL a {
-    color: rgb(66, 170, 255);
+h1 a {
     text-decoration: none;
+    color: rgba(250, 250, 250, 0.6);
+}
+
+h1 a:hover {
+    color: rgba(255, 76, 91, 0.6);
+    font-size: 76px;
 }
 
 h1.SQL a:hover {
-    color: lightgreen;
-    font-size: 96px;
-}
-
-h1.CSS {
-    color: rgb(10, 10, 240);
-}
-
-h1.HTML {
-    color: rgb(255, 165, 0);
+    color: rgba(144, 238, 144, 0.6);
+    font-size: 76px;
 }
 
 h2 {
-    text-align: left;
-    font-size: 40px;
-    margin: 20px;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+p.subtitle {
+    font-size: 35px;
 }
 
 p {
     text-align: left;
-    font-size: 20px;
+    font-size: 24px;
     margin: 20px;
 }
 
@@ -82,21 +86,25 @@ p {
 }
 
 .left-column {
+  font-family: 'Courier New', Courier, monospace;
   background-image: url('синия_доска.jpg');
   background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
   flex: 0 0 228px; /* фиксированный размер ширины для левой колонки */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(128, 128, 128, 0.8);
 }
 
 .right-column {
+  font-style: italic;
+  color: #2b2b2b;
+  text-shadow: 2px 2px 0px rgba(100,10,100,0.2);
   background-image: url('полая_страница1.jpeg');
   background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
   flex-grow: 1; /* правая колонка будет растягиваться на оставшееся свободное пространство */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #000;
 }
 
 
