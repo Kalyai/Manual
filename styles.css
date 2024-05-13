@@ -98,7 +98,7 @@ p {
 .right-column {
   font-style: italic;
   color: #2b2b2b;
-  text-shadow: 2px 2px 0px rgba(100,10,100,0.2);
+  text-shadow: 2px 2px 0px rgba(101,56,24,0.14);
   background-image: url('полая_страница1.jpeg');
   background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
