@@ -1,21 +1,41 @@
 body {
-  background: rgb(100, 125, 100);
   padding: 50px;
-  color: black;
   overflow: hidden;
+  background-image: url('полка_книжек2.jpeg'); /* Путь к вашей картинке */
+  background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
+  background-repeat: no-repeat; /* Отключает повторение изображения */
 }
 
-ul {
-  list-style-type: disc;
-  font-size: 32px;
+li {
+  list-style-type: none; /* Убираем стандартные маркеры */
+  position: relative; /* Позиционируем относительно */
+  font-size: 20px; /* Размер шрифта */
 }
 
 li.yes {
+  list-style-type: disc;
+  font-size: 32px;
   color: lightgreen;
 }
 
 li.no {
+  list-style-type: disc;
+  font-size: 32px;
   color: rgb(255, 76, 91);
+}
+
+li.desc_yes::before {
+  content: '•'; /* Устанавливаем контент точки */
+  color: lightgreen; /* Цвет точки */
+  font-size: inherit; /* Наследуем размер шрифта от родительского элемента */
+  margin-right: 5px; /* Отступ между точкой и текстом */
+}
+
+li.desc_no::before {
+  content: '•'; /* Устанавливаем контент точки */
+  color: rgb(255, 76, 91); /* Цвет точки */
+  font-size: inherit; /* Наследуем размер шрифта от родительского элемента */
+  margin-right: 5px; /* Отступ между точкой и текстом */
 }
 
 h1 {
@@ -44,18 +64,36 @@ h1.HTML {
     color: rgb(255, 165, 0);
 }
 
+h2 {
+    text-align: left;
+    font-size: 40px;
+    margin: 20px;
+}
+
+p {
+    text-align: left;
+    font-size: 20px;
+    margin: 20px;
+}
+
 .container {
   display: flex; /* используем флексбокс для создания двух колонок */
   height: 512px;
 }
 
 .left-column {
+  background-image: url('синия_доска.jpg');
+  background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
+  background-repeat: no-repeat; /* Отключает повторение изображения */
   flex: 0 0 228px; /* фиксированный размер ширины для левой колонки */
   padding: 20px;
   border: 1px solid #ccc;
 }
 
 .right-column {
+  background-image: url('полая_страница1.jpeg');
+  background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
+  background-repeat: no-repeat; /* Отключает повторение изображения */
   flex-grow: 1; /* правая колонка будет растягиваться на оставшееся свободное пространство */
   padding: 20px;
   border: 1px solid #ccc;
