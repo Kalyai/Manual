@@ -1,0 +1,64 @@
+body {
+  background: rgb(100, 125, 100);
+  padding: 50px;
+  color: black;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: disc;
+  font-size: 32px;
+}
+
+li.yes {
+  color: lightgreen;
+}
+
+li.no {
+  color: rgb(255, 76, 91);
+}
+
+h1 {
+  font-size: 64px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+h1.SQL a {
+    color: rgb(66, 170, 255);
+    text-decoration: none;
+}
+
+h1.SQL a:hover {
+    color: lightgreen;
+    font-size: 96px;
+}
+
+h1.CSS {
+    color: rgb(10, 10, 240);
+}
+
+h1.HTML {
+    color: rgb(255, 165, 0);
+}
+
+.container {
+  display: flex; /* используем флексбокс для создания двух колонок */
+  height: 512px;
+}
+
+.left-column {
+  flex: 0 0 228px; /* фиксированный размер ширины для левой колонки */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.right-column {
+  flex-grow: 1; /* правая колонка будет растягиваться на оставшееся свободное пространство */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+
