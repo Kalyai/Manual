@@ -90,9 +90,9 @@ p {
   background-image: url('синия_доска.jpg');
   background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
-  flex: 0 0 228px; /* фиксированный размер ширины для левой колонки */
+  flex: 0 0 287px; /* фиксированный размер ширины для левой колонки */
   padding: 20px;
-  border: 1px solid rgba(128, 128, 128, 0.8);
+  border: 1px solid #fff;
 }
 
 .right-column {
@@ -104,7 +104,7 @@ p {
   background-repeat: no-repeat; /* Отключает повторение изображения */
   flex-grow: 1; /* правая колонка будет растягиваться на оставшееся свободное пространство */
   padding: 20px;
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 
