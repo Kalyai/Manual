@@ -1,8 +1,9 @@
 body {
-  padding: 50px;
+  padding: 160px;
   overflow: hidden;
-  background-image: url('синия_доска.jpg');
-  background-size: cover;
+  background: rgb(166,166,166);
+  background: radial-gradient(circle, rgba(166,166,166,1) 0%, rgba(0,0,0,1) 100%);
+  background-repeat: no-repeat;
   margin: 0;
   text-align: center;
 }
