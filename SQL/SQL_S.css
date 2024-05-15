@@ -1,0 +1,49 @@
+body {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  padding: 50px;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-weight: 400;
+}
+
+ul {
+    font-size: 25px;
+    color: rgb(50, 150, 250);
+    margin-bottom: 35px;
+}
+
+ul li {
+    color: rgb(200, 255, 240);
+}
+
+
+a.back {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(250, 250, 250, 0.4);
+    text-decoration: none;
+}
+
+a.back:hover {
+    text-align: center;
+    color: rgba(250, 250, 250, 0.6);
+}
+
+.container {
+  display: flex;
+}
+
+.left-column {
+  flex: 0 0 275px;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.right-column {
+  flex-grow: 3;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 20px;
+}
+
+
