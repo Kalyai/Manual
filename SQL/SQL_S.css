@@ -1,11 +1,22 @@
 body {
   background-image: url("синтаксис_sql.png");
   font-family: Comic Sans MS, Comic Sans, cursive;
-  padding: 50px;
+  padding: 20px;
   margin: 0;
   background-color: black;
   color: white;
   font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(200, 255, 240);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(50, 150, 250);
+    font-size: 110%
 }
 
 ul {
