@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -15,7 +18,45 @@
         <a class="back" href="ALTER.html">ALTER</a>
         <h1> ALTER в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Команда ALTER в SQL используется для изменения структуры существующей таблицы в базе данных.
+                С её помощью можно добавлять, удалять или изменять разные части таблицы, такие как столбцы, ключи, ограничения.
+            </p>
+            <p>
+                Примеры:
+                <ul>
+                    <li>
+                        Добавление/удаление стобца
+                        <div class="syntax">
+<pre><code class="language-sql">ALTER TABLE employees // ALTER - изменения, TABLE name - таблицы с именем
+ADD COLUMN birthdate DATE; // ADD - добавление, COLUMN name - к колонки с именем, DATE - дату (тут может любая информация)
+
+// Также при добавление/удаления CONSTRAINT - ограничений
+
+ALTER TABLE employees // ALTER - изменения, TABLE name - таблицы с именем
+DROP COLUMN birthdate; // DROP - удаление, COLUMN name - таблицы с именем
+</code></pre>
+                        </div>
+                    </li>
+                    <p class="description">
+                        Мы сначала добавили в таблицу `employees` колонку `birthdate` с типом данных `DATE`
+                    </p>
+                    <p class="description">
+                        Потом удалили колонку `birthdate` в таблице `employees`
+                    </p>
+                    <li>
+                        Изменение типа данных столбца
+                        <div class="syntax">
+<pre><code class="language-sql">ALTER TABLE employees //ALTER - изменения, TABLE name - таблицы с именем
+ALTER COLUMN salary SET DATA TYPE DECIMAL(10, 2); //ALTER - изменения, COLUMN name - таблицы с именем, SET DATA TYPE - установить тип данных, DECIMAL - числа с плавающей точкой
+</code></pre>
+                        </div>
+                        <p class="description">
+                        Мы изменили тип данных  в таблице `employees` в колонке `salary` на `DECIMAL`
+                        </p>
+                    </li>
+                </ul>
+            </p>
         </div>
     </div>
 </body>
