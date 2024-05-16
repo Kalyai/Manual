@@ -87,7 +87,7 @@ p {
 .left-column {
   font-family: 'Courier New', Courier, monospace;
   background-image: url('screenshots/синия_доска.jpg');
-  background-size: cover; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
+  background-size: 330px 600px; /* Масштабирует изображение, чтобы оно полностью покрывало фон */
   background-repeat: no-repeat; /* Отключает повторение изображения */
   flex: 0 0 287px; /* фиксированный размер ширины для левой колонки */
   padding: 20px;
