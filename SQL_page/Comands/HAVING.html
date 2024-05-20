@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,75 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="HAVING.html">ALTER</a>
+        <a class="back" href="HAVING.html">HAVING</a>
         <h1> HAVING в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор HAVING в языке SQL применяется после оператора GROUP BY
+                и используется для фильтрации результатов агрегатных функций на основе заданных условий.
+                Он позволяет применять условия к группам строк, сгруппированным по определенному столбцу или столбцам.
+                P.S. Агрегатные данные - это суммирование, подсчет, нахождение среднего, максимума, минимума и другие функции.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Использования HAVING после GROUP BY
+                    <div class="syntax">
+<pre><code class="language-sql">//Таблица sales:
+sale_id	product_id	sale_date	 quantity	price
+1	    101	        2023-01-01	 2	        50
+2	    102	        2023-01-02	 1	        30
+3	    101	        2023-01-03	 3	        50
+4	    103	        2023-01-04	 5	        20
+5	    102	        2023-01-05	 2	        30
+
+SELECT product_id, COUNT(*) AS total_sales
+FROM sales
+GROUP BY product_id
+HAVING total_sales > 1
+
+//Результат:
+product_id	total_sales
+101	        2
+102	        2
+
+//P.S. Столбец total_sales уже является агригатным
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Выбираем два столбца `product_id` и счетсчик строк (всего строк 5)
+                </p>
+                <p class="description">
+                    При помощи GROUP BY выбираем строки только с уникальным `product_id` и выбираем количество строк где есть определенный `product_id` (например 101)
+                </p>
+                <p class="description">
+                    Потом при помощи HAVING создаем условия где total_sales > 1
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать что-то, откуда-то
+                </li>
+                <li>
+                    COUNT(...) - Считает количество строк
+                </li>
+                <li>
+                    AS - создает псевдоним
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    GROUP BY - Группирирует по указанным столбцам
+                </li>
+                <li>
+                    HAVING - создает условия после оператора GROUP BY
+                </li>
+            </ul>
         </div>
     </div>
 </body>

@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,60 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="DROP.html">ALTER</a>
+        <a class="back" href="DROP.html">DROP</a>
         <h1> DROP в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор DROP в языке SQL используется для удаления объектов базы данных, таких как таблицы или индексы.
+                Этот оператор не только удаляет данные внутри объекта, но и сам объект.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Удаление базы даннных
+                    <div class="syntax">
+<pre><code class="language-sql">DROP DATABASE base
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Удаляем базу данных с именем base
+                </p>
+                <li>
+                    Удаление таблицы
+                    <div class="syntax">
+<pre><code class="language-sql">DROP TABLE employees FROM base
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Удаляем таблицу employees из базы данных base
+                </p>
+                <li>
+                    Удаления индекса
+                    <div class="syntax">
+<pre><code class="language-sql">DROP INDEX FOREIGN KEY ON employees
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Удаляем индекс внешний ключ из таблицы employees
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать что-то, откуда-то
+                </li>
+                <li>
+                    DISTINC - Выбрать только уникальное
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+            </ul>
         </div>
     </div>
 </body>

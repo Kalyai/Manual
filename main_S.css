@@ -2,8 +2,7 @@ body {
   background-image: url('screenshots/полка_книжек.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 50px;
-  margin: 0;
+  margin: 25px;
   background-color: black;
 }
 
@@ -76,9 +75,7 @@ p.subtitle {
 }
 
 p {
-    text-align: left;
     font-size: 24px;
-    margin: 20px;
 }
 
 .container {

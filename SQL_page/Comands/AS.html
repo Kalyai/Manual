@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -15,7 +18,69 @@
         <a class="back" href="AS.html">ALTER</a>
         <h1> AS в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор AS в языке SQL используется для присвоения псевдонима столбцу или таблице,
+                чтобы упростить работу с ними или сделать вывод более читаемым.
+                Псевдонимы позволяют временно использовать другое имя в рамках конкретного запроса.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Псевдоним для объединения столбцов
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT First_name + ' ' + Second_name
+AS Full_name FROM employees
+</code></pre>
+                    </div>
+                    </li>
+                    <p class="description">
+                        Мы выбираем столбцы с именем и фамилией из `employees`
+                    </p>
+                    <p class="description">
+                        Дальше в выводе объединяем их в один столбец `Full_name` с пробелом между именем и фамлиией
+                    </p>
+                    <li>
+                        Псевдоним для более удобства в запросе
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT First_name + ' ' + Last_name
+AS Full_name FROM employees
+WHERE Full_name LIKE 'Kalyaev Sergei'
+</code></pre>
+                    </div>
+                    <p class="description">
+                        Мы также выбираем столбцы с именем и фамилией из `employees`
+                    </p>
+                    <p class="description">
+                        Дальше объединяем их в один столбец `Full_name` с пробелом между именем и фамлиией
+                    </p>
+                    <p class="description">
+                        Потом сравниваем полное имя со строчкой Kalyaev Sergei
+                    </p>
+                    <p class="description">
+                        Удобство заключается в том, что мы сразу сравниваем полное имя, а не по отдельности имя и фамилию
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать столбцы из таблицы/базы данных (знак `*` означает выбрать все)
+                </li>
+                <li>
+                    AS - Назвать как `name`, создает псевдоним, также может объединять столбцы
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    WHERE - Оператор для добавления условий
+                </li>
+                <li>
+                    LIKE - Сравнение, Это как Это -> 'Ivanov Ivan' LIKE 'Ivanov Ivan'
+                </li>
+            </ul>
         </div>
     </div>
 </body>

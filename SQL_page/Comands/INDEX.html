@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,61 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="INDEX.html">ALTER</a>
+        <a class="back" href="INDEX.html">INDEX</a>
         <h1> INDEX в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                INDEX в SQL - это специальная структура данных, которая позволяет ускорить операции поиска и выборки в таблицах базы данных.
+                Индексы работают подобно указателям, которые указывают на местоположение данных в таблице,
+                что позволяет базе данных быстро находить нужные строки без необходимости перебора всех записей.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Создание индекса для одного столбца
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE INDEX fast_search ON employees(name)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем индекс `fast_search` (можно любое имя) для столбца `name` в таблице `employees`
+                </p>
+                <li>
+                    Индекс, который предотвращает дублирование значений
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE UNIQUE INDEX any_name ON employees(name)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем ункальный индекс для столбца `name` в таблице `employees`
+                </p>
+                <li>
+                    Создание индекса для двух и более столбцов
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE INDEX need_memory ON employees(name, age, ...)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем индекс `need_memory` для столбцов `name`, `age` и любых других в таблице `employees`
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    CREATE - Создание объекста в указанном месте
+                </li>
+                <li>
+                    INDEX - Ускоряет работу со строками, занимает больше памяти
+                </li>
+                <li>
+                    ON - Создает связь, указывает куда что-то добавить, сделать и т.п. (указатель)
+                </li>
+            </ul>
         </div>
     </div>
 </body>

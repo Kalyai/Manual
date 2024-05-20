@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,48 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="BETWEEN.html">ALTER</a>
+        <a class="back" href="BETWEEN.html">BETWEEN</a>
         <h1> BETWEEN в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор BETWEEN в языке SQL используется для фильтрации данных в пределах заданного диапазона значений.
+                Он позволяет выбирать строки,
+                в которых значение столбца находится между двумя указанными значениями, включая сами эти значения.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Сотрудники с возрастом между 18 и 20
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT * FROM employees
+WHERE Age BETWEEN 18 and 20
+</code></pre>
+                    </div>
+                    </li>
+                    <p class="description">
+                        Выводим всю инфомарцию из таблицы `employees`
+                    </p>
+                    <p class="description">
+                        Где числовое значение строки с возрастом между 18 и 20 включительно
+                    </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать столбцы из таблицы (знак `*` значит все столбцы)
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    WHERE - Оператор для добавления условий
+                </li>
+                <li>
+                    BETWEEN - Проверка числового значения на диапазон между number1 AND number2
+                </li>
+            </ul>
         </div>
     </div>
 </body>

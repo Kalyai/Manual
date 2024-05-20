@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,38 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="INSERT_INTO.html">ALTER</a>
+        <a class="back" href="INSERT_INTO.html">INSERT INTO</a>
         <h1> INSERT INTO в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор INSERT в языке SQL используется для добавления новых записей в таблицу базы данных.
+                В связке с VALUES, Он позволяет указать значения для каждого столбца при вставке новой строки данных.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Вставка значений в таблицу
+                    <div class="syntax">
+<pre><code class="language-sql">INSERT INTO employees(First_name, Second_name, Age)
+VALUES('Sergei', 'Kalyaev', 18)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Вставляем значения в таблицу `employees` и записоваем их в `First_name`, `Second_name`, `age`
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    INSERT INTO - Вставка значений
+                </li>
+                <li>
+                    VALUES - сами значения для вставка
+                </li>
+            </ul>
         </div>
     </div>
 </body>

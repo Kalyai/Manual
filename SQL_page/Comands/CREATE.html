@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,67 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="CREATE.html">ALTER</a>
+        <a class="back" href="CREATE.html">CREATE</a>
         <h1> CREATE в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор CREATE в языке SQL используется для создания новых баз данных, таблиц, индексов, представлений и других объектов базы данных.
+                У создаваемого объекта можно настроить структуру и характеристики.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Создание базы данных
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE DATABASE employees
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем базу данных `employees`
+                </p>
+                <li>
+                    Создаем таблицу
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE TABLE info(
+    Id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255) NOT NULL
+)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем таблицу `info` со столбцами Id, Name. Также задали им какие-то параметры
+                </p>
+                <li>
+                    Создание уникальный индекс
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE UNIQUE INDEX
+idx_unique_name ON info(name)
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Создаем уникальный индекс в столбцу name
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    CREATE - Создать что-либо
+                </li>
+                <li>
+                    DATABASE name - База данных с именем name
+                </li>
+                <li>
+                    TABLE - Таблицы с именем name
+                </li>
+                <li>
+                    ON - Используется для установления соединения
+                </li>
+            </ul>
         </div>
     </div>
 </body>

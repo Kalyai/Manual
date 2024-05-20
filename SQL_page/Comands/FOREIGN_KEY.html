@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,52 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="FOREIGN_KEY.html">ALTER</a>
+        <a class="back" href="FOREIGN_KEY.html">FOREIGN KEY</a>
         <h1> FOREIGN KEY в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                FOREIGN KEY (внешний ключ) - это ограничение, которое используется для установления связи между двумя таблицами.
+                Внешний ключ в одной таблице ссылается на первичный ключ или уникальный ключ в другой таблице.
+                Это помогает поддерживать целостность данных, гарантируя,
+                что значения в столбце внешнего ключа соответствуют значениям в столбце первичного или уникального ключа другой таблицы.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Пример создания FOREIGN KEY
+                    <div class="syntax">
+<pre><code class="language-sql">CREATE TABLE People (
+	Id INT PRIMARY KEY,
+	Name VARCHAR(255) NOT NULL,
+	Ip_adress INT FOREIGN KEY REFERENCES Info (Ip_adress)
+);
+</code></pre>
+                    </div>
+                </li>
+                <div class="img">
+                    <img src="foreign_key.png" width="100%">
+                </div>
+                <p class="description">
+                    Создаем таблицу с `Id`, `Name` и `Ip_adress`
+                </p>
+                <p class="description">
+                    `Ip_adress` делаем внешним ключом, который зависит от таблицы Info (колонки Ip_adress), а находится в таблице `People`
+                </p>
+                <p class="description">
+                    Теперь эти две таблицы связанны между собой внешним ключом
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    CREATE - Создание таблицы/базы даннных
+                </li>
+                <li>
+                    TABLE name - таблица с именем name
+                </li>
+            </ul>
         </div>
     </div>
 </body>

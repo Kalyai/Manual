@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,64 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="AND.html">ALTER</a>
+        <a class="back" href="AND.html">AND</a>
         <h1> AND в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор AND в языке SQL используется для объединения нескольких условий в запросе.
+                Это логическое И в мире информатики.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    В связке с WHERE
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT * FROM employees
+WHERE salary > 60000 AND age < 30
+</code></pre>
+                    </div>
+                    </li>
+                    <p class="description">
+                        В первой строчке мы делаем запрос на выбор все строчек из таблицы `employees`
+                    </p>
+                    <p class="description">
+                        Во второй строчке мы создаем условия для выбора строчек: (ЗП > 60000) И (возраст < 30)
+                    </p>
+                    <li>
+                        В синтаксисе BETWEEN
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT * FROM products
+WHERE price BETWEEN 10 AND 50
+</code></pre>
+                    </div>
+                    <p class="description">
+                        Первая строчка такая же, только таблица с другим именем
+                    </p>
+                    <p class="description">
+                        Дальше добавляем условия: Цена от 10 до 50 включительно
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать столбцы из таблицы/базы данных (знак `*` означает выбрать все)
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    WHERE - Оператор для добавления условий
+                </li>
+                <li>
+                    BETWEEN - Для обозначения диапазона
+                </li>
+                <li>
+                    AND - Логичекое `И`, нужна для условий
+                </li>
+            </ul>
         </div>
     </div>
 </body>

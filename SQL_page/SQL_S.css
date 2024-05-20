@@ -1,11 +1,8 @@
 body {
   background-image: url("синтаксис_sql.png");
   font-family: Comic Sans MS, Comic Sans, cursive;
-  padding: 20px;
   margin: 0;
   background-color: black;
-  color: white;
-  font-weight: 400;
 }
 
 a {
@@ -14,9 +11,17 @@ a {
 }
 
 a:hover {
-    text-decoration: none;
     color: rgb(50, 150, 250);
     font-size: 110%
+}
+
+a.back {
+    font-size: 25px;
+    color: rgba(250, 250, 250, 0.4);
+}
+
+a.back:hover {
+    color: rgba(250, 250, 250, 0.6);
 }
 
 ul {
@@ -29,18 +34,6 @@ ul li {
     color: rgb(200, 255, 240);
 }
 
-
-a.back {
-    font-size: 25px;
-    color: rgba(250, 250, 250, 0.4);
-    text-decoration: none;
-}
-
-a.back:hover {
-    text-align: center;
-    color: rgba(250, 250, 250, 0.6);
-}
-
 h1 {
     text-align: center;
     font-size: 50px;
@@ -48,7 +41,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 175px;
+    margin-top: 15%;
     text-align: center;
     font-size: 25px;
     color: rgb(50, 150, 250);
@@ -64,31 +57,25 @@ div.img {
 }
 
 div.footer {
+    margin-top: 15%;
     border: 1px solid rgb(200, 255, 240);
-    position: absolute;
-    left: 25px;
-    bottom: 25px;
-    right: 25px;
 }
 
 .container {
-  margin-left: 75px;
-  margin-right: 75px;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  background-color: black;
+  padding: 50px;
   display: flex;
 }
 
 .left-column {
+  background-color: black;
   flex: 0 0 300px;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgba(250, 250, 250, 0.4);
 }
 
 .right-column {
-  position: relative;
+  background-color: black;
   flex-grow: 1;
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid rgba(250, 250, 250, 0.4);
   padding: 20px;
 }
 

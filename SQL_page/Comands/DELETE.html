@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,51 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="DELETE.html">ALTER</a>
+        <a class="back" href="DELETE.html">DELETE</a>
         <h1> DELETE в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор DELETE в языке SQL используется для удаления одной или нескольких записей из таблицы базы данных.
+                Также он позволяет установить условия для конкретики удаления.
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Удаление без условия
+                    <div class="syntax">
+<pre><code class="language-sql">DELETE * FROM employees
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Удаляем все записи в таблицу `employees`
+                </p>
+                <li>
+                    Удаление с условием
+                    <div class="syntax">
+<pre><code class="language-sql">DELETE * FROM employees
+WHERE age > 50
+</code></pre>
+                    </div>
+                </li>
+                <p class="description">
+                    Удаляем только те столбцы, где возраст сотрудника > 50
+                </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    DELETE - Удалить записи
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    WHERE - Оператор условия
+                </li>
+            </ul>
         </div>
     </div>
 </body>

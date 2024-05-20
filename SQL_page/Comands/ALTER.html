@@ -22,21 +22,20 @@
                 Команда ALTER в SQL используется для изменения структуры существующей таблицы в базе данных.
                 С её помощью можно добавлять, удалять или изменять разные части таблицы, такие как столбцы, ключи, ограничения.
             </p>
-            <p>
-                Примеры:
-                <ul>
-                    <li>
-                        Добавление/удаление стобца
-                        <div class="syntax">
-<pre><code class="language-sql">ALTER TABLE employees // ALTER - изменения, TABLE name - таблицы с именем
-ADD COLUMN birthdate DATE; // ADD - добавление, COLUMN name - к колонки с именем, DATE - дату (тут может любая информация)
+            Примеры:
+            <ul>
+                <li>
+                    Добавление/удаление стобца
+                    <div class="syntax">
+<pre><code class="language-sql">ALTER TABLE employees
+ADD COLUMN birthdate DATE;
 
 // Также при добавление/удаления CONSTRAINT - ограничений
 
-ALTER TABLE employees // ALTER - изменения, TABLE name - таблицы с именем
-DROP COLUMN birthdate; // DROP - удаление, COLUMN name - таблицы с именем
+ALTER TABLE employees
+DROP COLUMN birthdate;
 </code></pre>
-                        </div>
+                    </div>
                     </li>
                     <p class="description">
                         Мы сначала добавили в таблицу `employees` колонку `birthdate` с типом данных `DATE`
@@ -46,17 +45,39 @@ DROP COLUMN birthdate; // DROP - удаление, COLUMN name - таблицы 
                     </p>
                     <li>
                         Изменение типа данных столбца
-                        <div class="syntax">
-<pre><code class="language-sql">ALTER TABLE employees //ALTER - изменения, TABLE name - таблицы с именем
-ALTER COLUMN salary SET DATA TYPE DECIMAL(10, 2); //ALTER - изменения, COLUMN name - таблицы с именем, SET DATA TYPE - установить тип данных, DECIMAL - числа с плавающей точкой
+                    <div class="syntax">
+<pre><code class="language-sql">ALTER TABLE employees
+ALTER COLUMN salary SET DATA TYPE DECIMAL(10, 2)
 </code></pre>
-                        </div>
-                        <p class="description">
+                    </div>
+                    <p class="description">
                         Мы изменили тип данных  в таблице `employees` в колонке `salary` на `DECIMAL`
-                        </p>
-                    </li>
-                </ul>
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Используемые команды:
             </p>
+            <ul>
+                <li>
+                    ALTER - команда для внесений изменений
+                </li>
+                <li>
+                    TABLE name - таблица с именем name
+                </li>
+                <li>
+                    ADD - добавление чего-либо
+                </li>
+                <li>
+                    COLUMN name - колонка с именем name
+                </li>
+                <li>
+                    DROP - удаление чего-либо
+                </li>
+                <li>
+                    SET DATA TYPE - установить тип данных: ...
+                </li>
+            </ul>
         </div>
     </div>
 </body>

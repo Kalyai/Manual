@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,39 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="AVG.html">ALTER</a>
+        <a class="back" href="AS.html">ALTER</a>
         <h1> AVG в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Оператор AVG в языке SQL применяется в связке с SELECT и используется для вычисления среднего значения числового столбца в таблице
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Вычисление среднего значения
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT AVG(Age) FROM employees
+</code></pre>
+                    </div>
+                </li>
+                    <p class="description">
+                        В выводе будет средний возвраст всех `employees`
+                    </p>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать столбцы из таблицы
+                </li>
+                <li>
+                    AVG - Сума чисел в столбце поделить на количество строк в столбце
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+            </ul>
         </div>
     </div>
 </body>

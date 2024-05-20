@@ -5,6 +5,9 @@
     <title>Manual</title>
     <link rel="icon" type="image/png" href="../../иконка_сайта.png">
     <link rel="stylesheet" href="sql_comands_pattern.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-funky.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -12,10 +15,235 @@
         <span class="arrow">→</span>
         <a class="back" href="../SQL.html">SQL</a>
         <span class="arrow">→</span>
-        <a class="back" href="JOIN.html">ALTER</a>
+        <a class="back" href="JOIN.html">JOIN</a>
         <h1> JOIN в SQL</h1>
         <div>
-            <p>Описание</p>
+            <p>
+                Операторов JOIN в SQL четыре основных типов: LEFT, RIGHT, INNER, FULL.
+                Они используются для объединения строк из двух или более таблиц на основе связанного столбца между ними,
+                например внешнего ключа (FOREIGN KEY).
+            </p>
+            Примеры:
+            <ul>
+                <li>
+                    Таблицы для примеров
+                    <div class="syntax">
+<pre><code class="language-sql">//Departments
+department_id	department_name
+1	            'HR'
+2	            'IT'
+3	            'Sales'
+4	            'CEO'
+
+//Employees
+employee_id	  name	           department_id
+1	          'Ivan Ivanov'	   1
+2	          'Alex Tinkov'    2
+3	          'Bread Pit'	   NULL
+4	          'Koly Koly'	   1
+5	          'Sergei Kalyaev' 4
+6	          'Nekit Brown'	   NULL
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    LEFT JOIN
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Employees.employee_id, Employees.name, Departments.department_name
+FROM Employees
+LEFT JOIN Departments
+ON Employees.department_id = Departments.department_id
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">employee_id name              department_name
+1           'Ivan Ivanov'     'HR'
+4           'Koly Koly'       'HR'
+2           'Alex Tinkov'     'IT'
+5           'Sergei Kalyaev'  'CEO'
+3           'Bread Pit'       NULL
+6           'Nekit Brown'     NULL
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    LEFT JOIN WHERE b.key is NULL
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Employees.employee_id, Employees.name, Departments.department_name
+FROM Employees
+LEFT JOIN Departments
+ON Employees.department_id = Departments.department_id
+WHERE Departments.department_id is NULL
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">employee_id name              department_name
+3           'Bread Pit'       NULL
+6           'Nekit Brown'     NULL
+</code></pre>
+                    </div>
+                </li>
+                <li> LEFT JOIN возвращает все строки из левой таблицы и совпадающие строки из правой таблицы. Если совпадения нет,
+                    то в результирующем наборе будут строки из левой таблицы с NULL значениями для всех столбцов из правой таблицы.
+                    Синия часть - это то, что мы получаем в выводе. На схеме Круг А - Employees, Круг B - Departments.
+                    <div class="img">
+                        <img src="LEFT_JOIN.png" width="100%">
+                    </div>
+                </li>
+                <p class="description">
+                    В `LEFT JOIN WHERE b.key is NULL`, Выводится только та часть A, где нет совпадений с B
+                </p>
+                <li>
+                    RIGHT JOIN
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Departments.department_id, Departments.department_name, Employees.employee_id, Employees.name
+FROM Employees
+RIGHT JOIN Departments
+ON Employees.department_id = Departments.department_id
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">department_id department_name employee_id name
+1             'HR'            1           'Ivan Ivanov'
+2             'IT'            2           'Alex Tinkov'
+1             'HR'            4           'Koly Koly'
+4             'CEO'           5           'Sergei Kalyaev'
+3             'Sales'         NULL        NULL
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    RIGHT JOIN WHERE a.key is NULL
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Departments.department_id, Departments.department_name, Employees.employee_id, Employees.name
+FROM Employees
+RIGHT JOIN Departments
+ON Employees.department_id = Departments.department_id
+WHERE Employees.department_id is NULL
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">
+department_id department_name employee_id name
+3             'Sales'         NULL        NULL
+</code></pre>
+                    </div>
+                </li>
+                <li> RIGHT JOIN возвращает все строки из правой таблицы и совпадающие строки из левой таблицы.
+                    Если совпадения нет, то в результирующем наборе будут строки из правой таблицы с NULL
+                    значениями для всех столбцов из левой таблицы.
+                    <div class="img">
+                        <img src="RIGHT_JOIN.png" width="100%">
+                    </div>
+                </li>
+                <p class="description">
+                    В `RIGHT JOIN WHERE a.key is NULL`, Выводится только та часть B, где нет совпадений с A
+                </p>
+                <p class="description">
+                    RIGHT JOIN и LEFT JOIN зеркальны
+                </p>
+                <li>
+                    INNER JOIN
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Employees.employee_id, Employees.name, Departments.department_name
+FROM Employees
+INNER JOIN Departments
+ON Employees.department_id = Departments.department_id
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">employee_id name              department_name
+1           'Ivan Ivanov'     'HR'
+2           'Alex Tinkov'     'IT'
+4           'Koly Koly'       'HR'
+5           'Sergei Kalyaev'  'CEO'
+</code></pre>
+                    </div>
+                </li>
+                <li> INNER JOIN возвращает только те строки, которые имеют совпадение в обеих таблицах.
+                    <div class="img">
+                        <img src="INNER_JOIN.png" width="100%">
+                    </div>
+                </li>
+                <li>
+                    FULL JOIN
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Employees.employee_id, Employees.name, Departments.department_name
+FROM Employees
+FULL JOIN Departments
+ON Employees.department_id = Departments.department_id
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">employee_id	name	            department_name
+1	        'Ivan Ivanov'	    'HR'
+2	        'Alex Tinkov'	    'IT'
+3	        'Bread Pit'	        NULL
+4	        'Koly Koly'	        'HR'
+5	        'Sergei Kalyaev'	'CEO'
+6	        'Nekit Brown'	    NULL
+NULL	    NULL	            'Sales'
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    FULL JOIN WHERE a.key is NULL or b.key is NULL
+                    <div class="syntax">
+<pre><code class="language-sql">SELECT Employees.employee_id, Employees.name, Departments.department_name
+FROM Employees
+FULL JOIN Departments
+ON Employees.department_id = Departments.department_id
+WHERE Employees.department_id is NULL
+OR Departments.department_id is NULL
+</code></pre>
+                    </div>
+                    Результат
+                    <div class="syntax">
+<pre><code class="language-sql">employee_id	name	            department_name
+3	        'Bread Pit'	        NULL
+6	        'Nekit Brown'	    NULL
+NULL	    NULL	            'Sales'
+</code></pre>
+                    </div>
+                </li>
+                <li> FULL JOIN возвращает все строки, когда есть совпадение в одной из таблиц. Если совпадения нет,
+                    то результирующий набор будет содержать NULL значения для всех столбцов таблицы, в которой нет совпадений.
+                    <div class="img">
+                        <img src="FULL_JOIN.png" width="100%">
+                    </div>
+                </li>
+                <p class="description">
+                    В `FULL JOIN WHERE a.key is NULL OR b.key is NULL`, Выводится только те части A и B, где нету совпадений
+                </p>
+                <li> Вся схема JOIN's
+                    <div class="img">
+                        <img src="JOINS.png" width="100%">
+                    </div>
+                </li>
+            </ul>
+            <p>
+                Используемые команды:
+            </p>
+            <ul>
+                <li>
+                    SELECT - Выбрать что-то, откуда-то
+                </li>
+                <li>
+                    FROM name - Из таблицы/базы данных с именем name
+                </li>
+                <li>
+                    ON - Используется для установления связи между объектами
+                </li>
+                <li>
+                    WHERE - Оператор для добавления условий
+                </li>
+            </ul>
         </div>
     </div>
 </body>
